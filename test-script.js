@@ -20,7 +20,7 @@ export let options = {
 
 
 
-TestOpt = {
+var TestOpt = {
   minTT: 10,
   maxTT: 20
 }
@@ -34,7 +34,7 @@ function getRandomInt(min, max) {
 //script de VU fica aqui
 export default function() {
   http.get("http://www.farmrio.com.br");
-  sleep(getRandomInt(minTT, maxTT));
+  sleep(getRandomInt(TestOpt.minTT, TestOpt.maxTT));
   http.get("http://www.farmrio.com.br/br/achadinhos");
-  sleep(getRandomInt(minTT, maxTT));
+  sleep(getRandomInt(TestOpt.minTT, TestOpt.maxTT));
 };
