@@ -21,8 +21,8 @@ export let options = {
 
 
 TestOpt = {
-  minTT = 10,
-  maxTT = 20
+  minTT: 10,
+  maxTT: 20
 }
 
 function getRandomInt(min, max) {
