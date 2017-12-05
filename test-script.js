@@ -2,8 +2,8 @@ import http from "k6/http";
 import { sleep } from "k6";
 
 export let options = {
-    vus: 20,
-    duration: "60s",
+    vus: 50,
+    duration: "300s",
     insecureSkipTLSVerify: true
   };
 
