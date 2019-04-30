@@ -609,33 +609,33 @@ spec:
         name: kong
         app: kong
     spec:
-      initContainers:
-      # hack to verify that the DB is up to date or not
-      # TODO remove this for Kong >= 0.15.0
-      - name: wait-for-migrations
-        image: kong:1.1
-        command: [ "/bin/sh", "-c", "kong migrations list" ]
-        env:
-        - name: KONG_ADMIN_LISTEN
-          value: 'off'
-        - name: KONG_PROXY_LISTEN
-          value: 'off'
-        - name: KONG_PROXY_ACCESS_LOG
-          value: "/dev/stdout"
-        - name: KONG_ADMIN_ACCESS_LOG
-          value: "/dev/stdout"
-        - name: KONG_PROXY_ERROR_LOG
-          value: "/dev/stderr"
-        - name: KONG_ADMIN_ERROR_LOG
-          value: "/dev/stderr"
-        - name: KONG_DATABASE
-          value: cassandra
-        - name: KONG_CASSANDRA_CONTACT_POINTS
-          value: cassandra
-        - name: KONG_CASSANDRA_KEYSPACE
-          value: kong
-        - name: KONG_CASSANDRA_REPL_FACTOR
-          value: "3"
+      # initContainers:
+      # # hack to verify that the DB is up to date or not
+      # # TODO remove this for Kong >= 0.15.0
+      # - name: wait-for-migrations
+      #   image: kong:1.1
+      #   command: [ "/bin/sh", "-c", "kong migrations list" ]
+      #   env:
+      #   - name: KONG_ADMIN_LISTEN
+      #     value: 'off'
+      #   - name: KONG_PROXY_LISTEN
+      #     value: 'off'
+      #   - name: KONG_PROXY_ACCESS_LOG
+      #     value: "/dev/stdout"
+      #   - name: KONG_ADMIN_ACCESS_LOG
+      #     value: "/dev/stdout"
+      #   - name: KONG_PROXY_ERROR_LOG
+      #     value: "/dev/stderr"
+      #   - name: KONG_ADMIN_ERROR_LOG
+      #     value: "/dev/stderr"
+      #   - name: KONG_DATABASE
+      #     value: cassandra
+      #   - name: KONG_CASSANDRA_CONTACT_POINTS
+      #     value: cassandra
+      #   - name: KONG_CASSANDRA_KEYSPACE
+      #     value: kong
+      #   - name: KONG_CASSANDRA_REPL_FACTOR
+      #     value: "3"
         # - name: KONG_PG_HOST
         #   value: postgres
         # - name: KONG_PG_PASSWORD
